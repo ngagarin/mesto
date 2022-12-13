@@ -48,12 +48,32 @@
 
 @import url(../blocks/elements/__city-name/elements__city-name.css);
 
-@import url(../blocks/elements/__like/elements__like.css);
-
 @import url(../blocks/elements/__like-button/elements__like-button.css);
+
+@import url(../blocks/elements/__like-button/_active/elements__like-button_active.css);
 
 /*footer*/
 
 @import url(../blocks/footer/footer.css);
 
 @import url(../blocks/footer/__author/footer_author.css);
+
+/*popup*/
+
+@import url(../blocks/popup/popup.css);
+
+@import url(../blocks/popup/_opened/popup_opened.css);
+
+@import url(../blocks/popup/__content/popup__content.css);
+
+@import url(../blocks/popup/__close-button/popup__close-button.css);
+
+@import url(../blocks/popup/__header/popup__header.css);
+
+@import url(../blocks/popup/__form/popup__form.css);
+
+@import url(../blocks/popup/__form-item/popup__form-item.css);
+
+@import url(../blocks/popup/__save-button/popup__save-button.css);
+
+@import url(../blocks/popup/__input/popup__input.css);

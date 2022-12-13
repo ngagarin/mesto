@@ -8,7 +8,7 @@
   <meta name="description" content="Третий сайт, написанный во время обучения в Яндекс.Практикум">
   <link rel="stylesheet" href="./pages/index.css">
   <script src="./scripts/index.js" defer></script>
-  <title>Mesto Russia</title>
+  <title>Mesto</title>
 </head>
 
 <body class="page">
@@ -20,13 +20,13 @@
   <main class="content">
 
     <section class="profile content__media">
-      <img src="./images/profile/kusto.png" class="profile__avatar" alt="Портрет Жак-Ива Кусто">
+      <img src="./images/profile/programmist.jpeg" class="profile__avatar" alt="Портрет Жак-Ива Кусто">
       <div class="profile__info">
         <div class="profile__name-info">
-          <h1 class="profile__name">Жак-Ив Кусто</h1>
+          <h1 class="profile__name">Николай Гагарин</h1>
           <button class="profile__button profile__button_type_edit"></button>
         </div>
-        <p class="profile__job">Исследователь океана</p>
+        <p class="profile__job">Студент Яндекс.Практикум</p>
       </div>
       <button class="profile__button profile__button_type_add"></button>
     </section>
@@ -37,17 +37,17 @@
           <img src="./images/elements/spb.jpeg" class="elements__picture">
           <div class="elements__info">
             <h2 class="elements__city-name">Санкт-Петербург</h2>
-              <button class="elements__like elements__like-button"></button>
+            <button class="elements__like-button"></button>
           </div>
         </li>
       </ul>
       <ul class="elements__element">
         <li>
           <img src="./images/elements/vlafivostok.jpeg" class="elements__picture">
-          <li class="elements__info">
-            <h2 class="elements__city-name">Владивосток</h2>
-              <button class="elements__like elements__like-button"></button>
-          </li>
+        <li class="elements__info">
+          <h2 class="elements__city-name">Владивосток</h2>
+          <button class="elements__like-button"></button>
+        </li>
         </li>
       </ul>
       <ul class="elements__element">
@@ -55,17 +55,17 @@
           <img src="./images/elements/nizhnii_novgorod.jpeg" class="elements__picture">
           <div class="elements__info">
             <h2 class="elements__city-name">Нижний Новгород</h2>
-              <button class="elements__like elements__like-button"></button>
+            <button class="elements__like-button"></button>
           </div>
         </li>
       </ul>
       <ul class="elements__element">
         <li>
           <img src="./images/elements/yaroslavl.jpeg" class="elements__picture">
-          <li class="elements__info">
-            <h2 class="elements__city-name">Ярославль</h2>
-              <button class="elements__like elements__like-button"></button>
-          </li>
+        <li class="elements__info">
+          <h2 class="elements__city-name">Ярославль</h2>
+          <button class="elements__like-button"></button>
+        </li>
         </li>
       </ul>
       <ul class="elements__element">
@@ -73,24 +73,44 @@
           <img src="./images/elements/sochi.jpeg" class="elements__picture">
           <div class="elements__info">
             <h2 class="elements__city-name">Сочи</h2>
-              <button class="elements__like elements__like-button"></button>
+            <button class="elements__like-button"></button>
           </div>
         </li>
       </ul>
       <ul class="elements__element">
         <li>
           <img src="./images/elements/Ekaterinburg.jpeg" class="elements__picture">
-          <li class="elements__info">
-            <h2 class="elements__city-name">Екатеринбург</h2>
-              <button class="elements__like elements__like-button"></button>
-          </li>
+        <li class="elements__info">
+          <h2 class="elements__city-name">Екатеринбург</h2>
+          <button class="elements__like-button"></button>
+        </li>
         </li>
       </ul>
     </section>
 
-    <section class="footer content__media">
-      <p class="footer__author">&copy;  2022 Mesto Russia by Nikolai Gagarin</p>
-    </section>
+    <footer class="footer content__media">
+      <p class="footer__author">2022. Nikolai Gagarin</p>
+    </footer>
+
+    <!-- Popup -->
+
+    <div class="popup popup_open-button">
+      <div class="popup__content">
+        <button class="popup__close-button"></button>
+        <h2 class="popup__header">Редактировать профиль</h2>
+        <form class="popup__form" name="editProfilePopupForm" novalidate>
+          <label class="popup__form-item">
+            <input type="text" class="popup__input popup__input_type_name" placeholder="Имя" name="name" id="name-input"
+              maxlength="200" required>
+          </label>
+          <label class="popup__form-item">
+            <input type="text" class="popup__input popup__input_type_job" id="job-input"
+              placeholder="Сфера деятельности" name="job" minlength="2" maxlength="200" required>
+          </label>
+          <button class="popup__save-button" type="submit">Сохранить</button>
+        </form>
+      </div>
+    </div>
 
   </main>
 
