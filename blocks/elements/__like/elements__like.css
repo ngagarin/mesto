@@ -1,0 +1,14 @@
+.elements__like {
+  flex-shrink: 0;
+  box-sizing: border-box;
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: opacity .2s;
+}
+
+.profile__button:hover {
+  opacity: .6;
+}
