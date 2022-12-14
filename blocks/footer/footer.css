@@ -4,7 +4,7 @@
 }
 
 @media screen and (max-width: 900px) {
-  .footer__author {
+  .footer {
     margin-top: 59px;
     margin-bottom: 47px;
   }
