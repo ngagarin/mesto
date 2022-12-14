@@ -5,6 +5,7 @@
   width: 32px;
   height: 32px;
   background-image: url(../../../images/popup/popup__close-button.svg);
+  background-repeat: no-repeat;
   border: 0;
   cursor: pointer;
   background-color: transparent;
