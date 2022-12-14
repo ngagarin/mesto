@@ -7,10 +7,16 @@
 
 @media screen and (max-width: 571px) {
   .header__logo {
-    margin-left: 27px;
+    margin-left: 48px;
     margin-bottom: 27.6px;
     /*31.6px в шаблоне*/
     width: 103.74px;
     height: 24.4px;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .header__logo {
+    margin-left: 27px;
   }
 }
