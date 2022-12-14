@@ -1,5 +1,6 @@
 .popup__form {
-  margin: 54px auto 0;
+  margin: 46px auto 0;
+  /*54px в шаблоне*/
   width: calc(100% - 2 * 36px);
 }
 

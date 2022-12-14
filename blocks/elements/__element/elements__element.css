@@ -1,11 +1,23 @@
 .elements__element {
   margin: 0;
   padding: 0;
-  list-style-type: none;
-  background-color: white;
-  border-radius: 3%;
-  max-height: 361px;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  overflow: hidden;
+  display: grid;
+  row-gap: 20px;
+  /*27px for PixelPerfect*/
+  column-gap: 17px;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+@media screen and (max-width: 900px) {
+  .elements__element {
+    grid-template-columns: repeat(2, 1fr);
+    margin-top: 36px;
+  }
+}
+
+@media screen and (max-width: 571px) {
+  .elements__element {
+    margin-top: 36px;
+    grid-template-columns: 100%;
+  }
 }

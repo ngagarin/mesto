@@ -3,8 +3,12 @@
   font-size: 18px;
   line-height: 22px;
   color: #FFFFFF;
-  margin: 16px 0 0;
-  /*10px for PerfectPixel*/
+  margin: 10px 0 0;
+  /*16px по макету*/
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  max-width: 336px;
 }
 
 @media screen and (max-width: 800px) {
@@ -13,11 +17,19 @@
   }
 }
 
-@media screen and (max-width: 571px) {
+@media screen and (max-width: 731px) {
   .profile__job {
     text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: calc(100% - 2 * 48px);
+  }
+}
+
+@media screen and (max-width: 571px) {
+  .profile__job {
     font-size: 14px;
     line-height: 17px;
-    margin-top: 14px;
+    max-width: calc(100% - 2 * 19px);
   }
 }

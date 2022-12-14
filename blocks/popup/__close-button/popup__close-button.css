@@ -16,11 +16,19 @@
   opacity: .6;
 }
 
+@media screen and (max-height: 450px) {
+  .popup__close-button {
+    top: 0;
+    right: -40px;
+  }
+}
+
 @media screen and (max-width: 571px) {
   .popup__close-button {
+    background-image: url(../../../images/popup/popup__close-button-mobile.svg);
     width: 20px;
     height: 20px;
-    top: -32px;
+    top: -36px;
     right: 0;
   }
 }

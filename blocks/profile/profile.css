@@ -5,7 +5,7 @@
   justify-content: space-between;
 }
 
-@media screen and (max-width: 468px) {
+@media screen and (max-width: 731px) {
   .profile {
     margin-top: 42px;
     justify-content: center;

@@ -5,7 +5,7 @@
   align-items: baseline;
 }
 
-@media screen and (max-width: 571px) {
+@media screen and (max-width: 731px) {
   .profile__name-info {
     justify-content: center;
     gap: 10px;

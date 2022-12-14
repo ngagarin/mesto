@@ -42,7 +42,8 @@
 
 @media screen and (max-width: 425px) {
   .profile__button_type_add {
-    margin-top: 36px;
+    margin-top: 33px;
+    /*36px по макету*/
     background-size: 16px 16px;
   }
 }

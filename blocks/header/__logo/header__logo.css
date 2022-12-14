@@ -1,11 +1,15 @@
 .header__logo {
-  margin-bottom: 41px;
+  width: 142px;
+  height: 33px;
+  margin-bottom: 37px;
+  /*41px в шаблоне*/
 }
 
 @media screen and (max-width: 571px) {
   .header__logo {
     margin-left: 27px;
-    margin-bottom: 31.6px;
+    margin-bottom: 27.6px;
+    /*31.6px в шаблоне*/
     width: 103.74px;
     height: 24.4px;
   }
