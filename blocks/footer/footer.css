@@ -1,18 +1,18 @@
 .footer {
-  margin-top: 67px;
-  margin-bottom: 60px;
-  margin-left: 200px;
+  margin: 67px auto 60px;
+  max-width: 880px;
+  width: calc(100% - 2 * 200px);
 }
 
 @media screen and (max-width: 1200px) {
   .footer {
-    margin-left: 120px;
+    width: calc(100% - 2 * 120px);
   }
 }
 
 @media screen and (max-width: 1024px) {
   .footer {
-    margin-left: 72px;
+    width: calc(100% - 2 * 72px);
   }
 }
 
@@ -25,7 +25,7 @@
 
 @media screen and (max-width: 768px) {
   .footer {
-    margin-left: 48px;
+    width: calc(100% - 2 * 48px);
   }
 }
 
@@ -38,6 +38,6 @@
 
 @media screen and (max-width: 425px) {
   .footer {
-    margin-left: 19px;
+    width: calc(100% - 2 * 19px);
   }
 }
