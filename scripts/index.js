@@ -11,7 +11,7 @@ const nameInput = document.querySelector('.popup__input_type_name');
 const jobInput = document.querySelector('.popup__input_type_job');
 
 /*открытие popup*/
-function popupOpen() {
+function openPopup () {
   /* запретить прокрутку body при открытом popup
   document.body.style.overflow = 'hidden';*/
   nameInput.value = profileName.textContent;
@@ -20,7 +20,7 @@ function popupOpen() {
 };
 
 /*закрытие popup*/
-function popupClose() {
+function closePopup () {
   /* разрешить прокрутку body при закрытом popup
   document.body.style.overflow = 'visible';*/
   popupShow.classList.remove('popup_opened')
@@ -31,16 +31,27 @@ function saveNewProfile(event) {
   event.preventDefault();
   profileName.textContent = nameInput.value;
   profileJob.textContent = jobInput.value;
-  popupClose()
+  closePopup()
 };
 
 /*слушатели событий для кнопок*/
-popupButtonOpen.addEventListener('click', popupOpen);
-popupButtonClose.addEventListener('click', popupClose);
+popupButtonOpen.addEventListener('click', openPopup);
+popupButtonClose.addEventListener('click', closePopup);
 popupForm.addEventListener('submit', saveNewProfile);
 
 
-/* попытка активировать лайк не работает на смртфоне
+/* попытка активировать лайк не работает на смртфоне */
+
+const like = document.querySelectorAll('.elements__like-button');
+
+like.forEach(function (item) {
+  function liked() {
+    item.classList.toggle('elements__like-button_active')
+  }
+  item.addEventListener('click', liked);
+})
+
+/*  или с циклом for *
 
 const like = document.querySelectorAll('.elements__like-button');
 
