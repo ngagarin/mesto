@@ -38,7 +38,7 @@ const imagePopupCaption = imagePopup.querySelector('.popup__image-caption'); //p
 const initialCards = [
   {
     name: 'Камчатка',
-    link: 'https://images.unsplash.com/photo-1645016978367-5a81d12f915d'
+    link: 'https://images.unsplash.com/photo-1557771810-22b35659143c'
   },
   {
     name: 'Санкт-Петербург',
