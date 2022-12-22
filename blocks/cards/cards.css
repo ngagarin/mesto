@@ -1,9 +1,9 @@
-.elements {
+.cards {
   margin-top: 51px;
 }
 
 @media screen and (max-width: 900px) {
-  .elements {
+  .cards {
     margin-top: 36px;
   }
 }

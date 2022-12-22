@@ -1,0 +1,7 @@
+.cards__picture {
+  width: 100%;
+  height: 282px;
+  object-fit: cover;
+  cursor: pointer;
+  /* на видео с заданием, пункт 7 - имеется курсор */
+}

@@ -1,12 +1,12 @@
-.elements__like-button {
-  width: 22px;
+.cards__delete {
+  width: 18px;
   height: 19px;
-  background-image: url(../../../images/elements/like-button.svg);
+  background-image: url(../../../images/cards/delete-button.svg);
   background-size: contain;
   box-sizing: border-box;
   padding: 0;
-  margin-right: 30px;
-  /*20px for PerfectPixel*/
+  margin: 0;
+  /*30px for maker*/
   background-color: transparent;
   cursor: pointer;
   border: none;
@@ -14,8 +14,11 @@
   background-repeat: no-repeat;
   transition: opacity .2s;
   flex-shrink: 0;
+  position: absolute;
+  top: 20px;
+  right: 20px;
 }
 
-.elements__like-button:hover {
+.cards__delete:hover {
   opacity: .5;
 }
