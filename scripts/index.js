@@ -2,10 +2,10 @@
 
 // Кнопки открытия popup и сам popup
 const popupEditProfileButtonOpen = document.querySelector('.profile__button_type_edit'); //кнопка редактирования профиля
-const popupEditProfile = document.querySelector('.popup__type_edit-profile'); //popup редактирования профайла
+const popupEditProfile = document.querySelector('.popup_type_edit-profile'); //popup редактирования профайла
 
 const popupCardsButtonOpen = document.querySelector('.profile__button_type_add'); //кнопка добавления карточки "+"
-const popupAddCard = document.querySelector('.popup__type_add-card'); //popup добавления карточки
+const popupAddCard = document.querySelector('.popup_type_add-card'); //popup добавления карточки
 
 const imagePopup = document.querySelector('.popup_type_image'); //popup просмотра фото
 
@@ -95,13 +95,14 @@ function saveNewCard(event) {
   event.preventDefault();
   newItem({ name: cityNameInput.value, link: pictureLinkInput.value, alt: cityNameInput.value });
   closePopup(event);
+  newCardForm.reset();
 }
 
 function newItem(card) {
   const newCard = cardTemplate.querySelector('.cards__item').cloneNode(true);
   newCard.querySelector('.cards__city-name').textContent = card.name;
   newCard.querySelector('.cards__picture').src = card.link;
-  newCard.querySelector('.cards__picture').alt = card.name;
+  newCard.querySelector('.cards__picture').alt = `Фотография. ${card.name}`;
 
   newCard.querySelector('.cards__delete').addEventListener('click', deleteCard);
   newCard.querySelector('.cards__like-button').addEventListener('click', likedCard);
