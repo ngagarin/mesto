@@ -18,9 +18,9 @@ const cardsButtonClose = document.querySelector('.popup__close-button_type_cards
 const imageButtonClose = document.querySelector('.popup__close-button_type_image'); //закрыть popup профайла
 
 // Для изменения профиля
-const newProfileForm = popupEditProfile.querySelector('.popup__form'); //форма редактирования профайла
-const nameInput = document.querySelector('.popup__input_type_name'); //поле ввода нового имени
-const jobInput = document.querySelector('.popup__input_type_job'); //поле ввода новой профессии
+const newProfileForm = popupEditProfile.querySelector('.form_type_profile'); //форма редактирования профайла
+const nameInput = document.querySelector('.form__input_type_name'); //поле ввода нового имени
+const jobInput = document.querySelector('.form__input_type_job'); //поле ввода новой профессии
 const profileName = document.querySelector('.profile__name'); //имя по умолчанию
 const profileJob = document.querySelector('.profile__job'); //профессия по умолчанию
 
@@ -31,9 +31,9 @@ const nameOfCards = document.querySelectorAll('.card__city-name'); //имя ка
 const photoOfCards = document.querySelectorAll('.card__picture'); //фотография карточки
 
 // Добавляем карточку
-const newCardForm = popupAddCard.querySelector('.popup__form'); //форма добавления карточек
-const cityNameInput = document.querySelector('.popup__input_type_city-name'); //поле ввода названия города
-const pictureLinkInput = document.querySelector('.popup__input_type_picture'); //поле ввода ссылки
+const newCardForm = popupAddCard.querySelector('.form'); //форма добавления карточек
+const cityNameInput = document.querySelector('.form__input_type_city-name'); //поле ввода названия города
+const pictureLinkInput = document.querySelector('.form__input_type_picture'); //поле ввода ссылки
 
 // Отображение одной карточки в popup
 const imagePopupFigure = imagePopup.querySelector('.popup__image'); //popup фотография
@@ -45,28 +45,52 @@ const imagePopupCaption = imagePopup.querySelector('.popup__image-caption'); //p
 function openPopup(popup) {
   bodyPage.classList.add('page_type_hidden');
   popup.classList.add('popup_opened');
+  document.addEventListener('keydown', handleClosePopup);
 };
 
 // Закрываем любой popup
 function closePopup(popup) {
   bodyPage.classList.remove('page_type_hidden');
   popup.classList.remove('popup_opened');
-}
+  document.removeEventListener('keydown', handleClosePopup);
+};
+
+// Закрываем любой popup клавишей Escape
+function handleClosePopup(event) {
+  const popups = document.querySelector('.popup_opened');
+  if (event.code === "Escape") {
+    closePopup(popups);
+  }
+};
+
+// Закрываем любой popup кликом по оверлэй
+function hideOverlay() {
+  const allPopups = Array.from(document.querySelectorAll('.popup'));
+  allPopups.forEach((popup) => {
+    popup.addEventListener('click', function (evt) {
+      if (evt.target.classList.contains('popup_opened')) {
+        closePopup(evt.target);
+      };
+    });
+  });
+};
+
+hideOverlay();
 
 // Создаём карточку
-function createNewCard(name, link) {
+function createNewCard(cardData) {
   const newCard = cardTemplate.querySelector('.card').cloneNode(true);
   const nameNewCard = newCard.querySelector('.card__city-name');
   const imageNewCard = newCard.querySelector('.card__picture');
   const likeNewCard = newCard.querySelector('.card__delete');
   const deleteNewCard = newCard.querySelector('.card__like-button');
 
-  nameNewCard.textContent = name;
-  imageNewCard.src = link;
-  imageNewCard.alt = `Фотография. ${name}`;
+  nameNewCard.textContent = cardData.name;
+  imageNewCard.src = cardData.link;
+  imageNewCard.alt = `Фотография. ${cardData.name}`;
 
-  likeNewCard.addEventListener('click', deleteCard);
-  deleteNewCard.addEventListener('click', likedCard);
+  likeNewCard.addEventListener('click', handleDeleteCard);
+  deleteNewCard.addEventListener('click', handleLikeCard);
   imageNewCard.addEventListener('click', function () {
     imagePopupFigure.src = imageNewCard.src;
     imagePopupFigure.alt = imageNewCard.alt;
@@ -75,32 +99,32 @@ function createNewCard(name, link) {
   });
 
   return newCard;
-}
+};
 
 //Выводим карточку
 function renderCards(container, ...cards) {
-  cards.forEach(card => {
-    container.prepend(createNewCard(card.name, card.link));
+  cards.forEach(cardData => {
+    container.prepend(createNewCard(cardData));
   });
-}
-
-// Лайкаем карточку
-function likedCard(event) {
-  event.target.classList.toggle('card__like-button_active');
-}
-
-// Удаляем карточку
-function deleteCard(event) {
-  event.target.closest('.card').remove();
-}
+};
 
 //Отображаем первоначальные карточки
 renderCards(cardsContainer, ...initialCards);
 
+// Лайкаем карточку
+function handleLikeCard(event) {
+  event.target.classList.toggle('card__like-button_active');
+};
+
+// Удаляем карточку
+function handleDeleteCard(event) {
+  event.target.closest('.card').remove();
+};
+
 /* ФОРМЫ */
 
 // Форма меняем имя и профессию
-function createNewProfile(event) {
+function handleCreateNewProfile(event) {
   event.preventDefault();
   profileName.textContent = nameInput.value;
   profileJob.textContent = jobInput.value;
@@ -108,7 +132,7 @@ function createNewProfile(event) {
 };
 
 // Форма добавляем новую карточку
-function saveNewCard(event) {
+function handleSaveNewCard(event) {
   event.preventDefault();
 
   const card = {
@@ -119,7 +143,7 @@ function saveNewCard(event) {
   renderCards(cardsContainer, card);
   closePopup(popupAddCard);
   newCardForm.reset();
-}
+};
 
 /* СЛУШАТЕЛИ И ОБРАБОТЧИКИ */
 
@@ -135,23 +159,21 @@ popupCardsButtonOpen.addEventListener('click', function () {
   openPopup(popupAddCard);
 });
 
-// Закрываем popup редактирования профайла
+// Закрываем popup кликом по кнопке "X"
 profileButtonClose.addEventListener('click', function () {
   closePopup(popupEditProfile);
 });
 
-// Закрываем popup добавления карты
 cardsButtonClose.addEventListener('click', function () {
   closePopup(popupAddCard);
 });
 
-// Закрываем popup с фото
 imageButtonClose.addEventListener('click', function () {
   closePopup(imagePopup);
 });
 
 // Сохраняем изменения профайла
-newProfileForm.addEventListener('submit', createNewProfile);
+newProfileForm.addEventListener('submit', handleCreateNewProfile);
 
 // Сохраняем добавленную карточку
-newCardForm.addEventListener('submit', saveNewCard);
+newCardForm.addEventListener('submit', handleSaveNewCard);

@@ -1,11 +1,12 @@
-.popup__form {
-  margin: 46px auto 0;
+.form {
+  margin: 47px auto 0;
   /*54px в шаблоне*/
   width: calc(100% - 2 * 36px);
+  position: relative;
 }
 
 @media screen and (max-width: 500px) {
-  .popup__form {
+  .form {
     margin-top: 75px;
     width: calc(100% - 2 * 22px);
   }
