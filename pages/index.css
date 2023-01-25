@@ -90,7 +90,7 @@
 
 @import url(../blocks/form/form.css);
 
-@import url(../blocks/form/_set/form_set.css);
+@import url(../blocks/form/__set/form__set.css);
 
 @import url(../blocks/form/__item/form__item.css);
 
