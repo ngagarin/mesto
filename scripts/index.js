@@ -13,9 +13,7 @@ const popupAddCard = document.querySelector('.popup_type_add-card'); //popup д�
 const imagePopup = document.querySelector('.popup_type_image'); //popup просмотра фото
 
 // Кнопки закрытия popup
-const profileButtonClose = document.querySelector('.popup__close-button_type_profile'); //закрыть popup профайла
-const cardsButtonClose = document.querySelector('.popup__close-button_type_cards'); //закрыть popup профайла
-const imageButtonClose = document.querySelector('.popup__close-button_type_image'); //закрыть popup профайла
+const allCloseButtons = Array.from(document.querySelectorAll('.popup__close-button')); //все кнопки закрытия popup
 
 // Для изменения профиля
 const newProfileForm = popupEditProfile.querySelector('.form_type_profile'); //форма редактирования профайла
@@ -76,6 +74,14 @@ function hideOverlay() {
 };
 
 hideOverlay();
+
+// Закрываем любой popup кликом по кнопке "X"
+allCloseButtons.forEach((button) => {
+  button.addEventListener('click', () => {
+    const currentPopup = button.closest('.popup');
+    closePopup(currentPopup);
+  });
+});
 
 // Создаём карточку
 function createNewCard(cardData) {
@@ -157,19 +163,6 @@ popupEditProfileButtonOpen.addEventListener('click', function () {
 // Открываем popup с добавлением карточки
 popupCardsButtonOpen.addEventListener('click', function () {
   openPopup(popupAddCard);
-});
-
-// Закрываем popup кликом по кнопке "X"
-profileButtonClose.addEventListener('click', function () {
-  closePopup(popupEditProfile);
-});
-
-cardsButtonClose.addEventListener('click', function () {
-  closePopup(popupAddCard);
-});
-
-imageButtonClose.addEventListener('click', function () {
-  closePopup(imagePopup);
 });
 
 // Сохраняем изменения профайла
