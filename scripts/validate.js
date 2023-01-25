@@ -75,9 +75,9 @@ const enableValidation = (validationElements) => {
       evt.target.reset();
 
       //деактивируем кнопку
-       const inputList = Array.from(formElement.querySelectorAll(validationElements.inputSelector));
-       const buttonElement = formElement.querySelector(validationElements.submitButtonSelector);
-       toggleButtonState(inputList, buttonElement, validationElements);
+      const inputList = Array.from(formElement.querySelectorAll(validationElements.inputSelector));
+      const buttonElement = formElement.querySelector(validationElements.submitButtonSelector);
+      toggleButtonState(inputList, buttonElement, validationElements);
     });
     setEventListeners(formElement, validationElements);
   });
