@@ -57,9 +57,9 @@ function closePopup(popup) {
 
 // Закрываем любой popup клавишей Escape
 function handleClosePopup(event) {
-  const popups = document.querySelector('.popup_opened');
   if (event.code === "Escape") {
-    closePopup(popups);
+    const popup = document.querySelector('.popup_opened');
+    closePopup(popup);
   }
 };
 
@@ -67,7 +67,7 @@ function handleClosePopup(event) {
 function hideOverlay() {
   const allPopups = Array.from(document.querySelectorAll('.popup'));
   allPopups.forEach((popup) => {
-    popup.addEventListener('click', function (evt) {
+    popup.addEventListener('mousedown', function (evt) {
       if (evt.target.classList.contains('popup_opened')) {
         closePopup(evt.target);
       };
