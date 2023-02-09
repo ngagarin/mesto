@@ -4,7 +4,7 @@ import { initialCards, validationElements, configElements, configForCard } from 
 
 import { Card } from './Card.js';
 
-import { FormValidator } from './Validate.js';
+import { FormValidator } from './FormValidator.js';
 
 /* ФУНКЦИИ */
 

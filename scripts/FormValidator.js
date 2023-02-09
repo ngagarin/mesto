@@ -69,5 +69,4 @@ export class FormValidator {
       this.toggleButtonState();
     });
   };
-
 }
