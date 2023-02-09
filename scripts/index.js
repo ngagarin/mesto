@@ -2,7 +2,7 @@
 
 import { initialCards, validationElements, configElements, configForCard } from './configElements.js';
 
-import { Card } from './Card.js';
+import { Card } from './Card.js/index.js';
 
 import { FormValidator } from './FormValidator.js';
 

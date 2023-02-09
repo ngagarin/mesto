@@ -9,7 +9,7 @@ export class Card {
     this._buttonForLike = this._element.querySelector('.card__like-button');
     this._buttonForDelete = this._element.querySelector('.card__delete');
     this._image = this._element.querySelector('.card__picture');
-  }
+  };
 
   // Создаем карточку
   _getTemplate() {
