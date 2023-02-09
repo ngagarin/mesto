@@ -2,9 +2,9 @@
 
 import { initialCards, validationElements, configElements, configForCard } from './configElements.js';
 
-import { Card } from './card.js';
+import { Card } from './Card.js';
 
-import { FormValidator } from './validate.js';
+import { FormValidator } from './Validate.js';
 
 /* ФУНКЦИИ */
 

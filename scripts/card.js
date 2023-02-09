@@ -6,8 +6,8 @@ export class Card {
     this._link = cardData.link;
     this._alt = cardData.name;
     this._element = this._getTemplate();
-    this._likeBtn = this._element.querySelector('.card__like-button');
-    this._deleteBtn = this._element.querySelector('.card__delete');
+    this._buttonForLike = this._element.querySelector('.card__like-button');
+    this._buttonForDelete = this._element.querySelector('.card__delete');
     this._image = this._element.querySelector('.card__picture');
   }
 
@@ -24,7 +24,7 @@ export class Card {
 
   // Лайкаем карточку
   _handleLikeCard() {
-    this._likeBtn.classList.toggle('card__like-button_active');
+    this._buttonForLike.classList.toggle('card__like-button_active');
   };
 
   // Удаляем карточку
@@ -34,8 +34,8 @@ export class Card {
 
   // Слушатель событий
   _setEventListeners() {
-    this._likeBtn.addEventListener('click', () => this._handleLikeCard());
-    this._deleteBtn.addEventListener('click', () => this._handleDeleteCard());
+    this._buttonForLike.addEventListener('click', () => this._handleLikeCard());
+    this._buttonForDelete.addEventListener('click', () => this._handleDeleteCard());
     this._image.addEventListener('click', () => this._handleFullScreen(this._name, this._link));
   };
 
