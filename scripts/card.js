@@ -20,7 +20,7 @@ export class Card {
       .cloneNode(true);
 
     return cardElement;
-  }
+  };
 
   // Лайкаем карточку
   _handleLikeCard() {

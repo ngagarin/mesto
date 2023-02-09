@@ -54,7 +54,7 @@ function handleClosePopup(event) {
   if (event.code === "Escape") {
     const popup = document.querySelector('.popup_opened'); //не получается убрать в configElements
     closePopup(popup);
-  }
+  };
 };
 
 // Закрываем любой popup кликом по кнопке "X"
