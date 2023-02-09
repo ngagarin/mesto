@@ -1,4 +1,4 @@
-export class Validate {
+export class FormValidator {
   constructor(validationSelectors, formElement) {
     this._form = formElement;
     this._buttonElement = this._form.querySelector(validationSelectors.submitButtonSelector);

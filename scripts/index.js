@@ -4,7 +4,7 @@ import { initialCards, validationElements, configElements, configForCard } from 
 
 import { Card } from './card.js';
 
-import { Validate } from './validate.js';
+import { FormValidator } from './validate.js';
 
 /* ФУНКЦИИ */
 
@@ -105,11 +105,11 @@ function handleSaveNewCard(event) {
 /* СЛУШАТЕЛИ И ОБРАБОТЧИКИ */
 
 //Активируем валидацию формы изменений профайла
-const profileFormValidator = new Validate(validationElements, configElements.popupEditProfile);
+const profileFormValidator = new FormValidator(validationElements, configElements.popupEditProfile);
 profileFormValidator.enableValidation();
 
 //Активируем валидацию формы добавления карточки
-const addCardFormValidator = new Validate(validationElements, configForCard.popupAddCard);
+const addCardFormValidator = new FormValidator(validationElements, configForCard.popupAddCard);
 addCardFormValidator.enableValidation();
 
 // Открываем popup - редактор профайла с заранее известными "имя" и "профессия"
