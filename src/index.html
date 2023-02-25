@@ -6,21 +6,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
   <meta name="author" content="Nikolai Gagrin">
   <meta name="description" content="Третий сайт, написанный во время обучения в Яндекс.Практикум">
-  <link rel="stylesheet" href="./pages/index.css">
   <title>Mesto</title>
-  <script type="module" src="./scripts/index.js" defer></script>
 </head>
 
 <body class="page">
 
   <header class="header">
-    <img src="./images/header/header__logo.svg" class="header__logo" alt="Логотип Mesto Russia">
+    <img src="<%=require('./images/header/header__logo.svg')%>" class="header__logo" alt="Логотип Mesto Russia">
   </header>
 
   <main class="content">
 
     <section class="profile content__media">
-      <img src="./images/profile/programmist.jpeg" class="profile__avatar" alt="Аватарка пользователя">
+      <img src="<%=require('./images/profile/programmist.jpeg')%>" class="profile__avatar" alt="Аватарка пользователя">
       <div class="profile__info">
         <div class="profile__name-info">
           <h1 class="profile__name">Николай Гагарин</h1>

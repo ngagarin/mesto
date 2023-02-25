@@ -1,7 +1,7 @@
-export class Card {
-  constructor(cardData, cardSelector, handleFullScreen) {
+export default class Card {
+  constructor(cardData, cardSelector, handleCardClick) {
     this._cardSelector = cardSelector;
-    this._handleFullScreen = handleFullScreen;
+    this.handleCardClick = handleCardClick;
     this._name = cardData.name;
     this._link = cardData.link;
     this._alt = cardData.name;
@@ -36,7 +36,7 @@ export class Card {
   _setEventListeners() {
     this._buttonForLike.addEventListener('click', () => this._handleLikeCard());
     this._buttonForDelete.addEventListener('click', () => this._handleDeleteCard());
-    this._image.addEventListener('click', () => this._handleFullScreen(this._name, this._link));
+    this._image.addEventListener('click', () => this.handleCardClick(this._name, this._link));
   };
 
   // Отображаем карту
@@ -44,7 +44,7 @@ export class Card {
     this._setEventListeners();
     this._element.querySelector('.card__city-name').textContent = this._name;
     this._image.src = this._link;
-    this._image.alt = this._name;
+    this._image.alt = `Фотография. ${this._name}`;
 
     return this._element;
   };
