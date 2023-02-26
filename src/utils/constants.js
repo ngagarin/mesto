@@ -12,8 +12,8 @@ export const popupCardsButtonOpen = document.querySelector('.profile__button_typ
 export const popupAddCard = document.querySelector('.popup_type_add-card');
 export const cardAdd = '.popup_type_add-card';
 export const cardTemplate = '#card';
-export const elementsContainer = document.querySelector('.cards__element');
-export const cityNameInput = document.querySelector('.form__input_type_city-name');
+export const containerSelector = '.cards__element';
+export const cityNameInput = document.querySelector('.form__input_type_title');
 export const pictureLinkInput = document.querySelector('.form__input_type_picture');
 
 // Валидация форм

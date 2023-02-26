@@ -30,6 +30,7 @@ export default class Card {
   // Удаляем карточку
   _handleDeleteCard() {
     this._element.remove();
+    this._element = null;
   };
 
   // Слушатель событий
@@ -42,7 +43,7 @@ export default class Card {
   // Отображаем карту
   generateCard() {
     this._setEventListeners();
-    this._element.querySelector('.card__city-name').textContent = this._name;
+    this._element.querySelector('.card__title').textContent = this._name;
     this._image.src = this._link;
     this._image.alt = `Фотография. ${this._name}`;
 

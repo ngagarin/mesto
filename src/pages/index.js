@@ -12,7 +12,7 @@ import {
   popupAddCard,
   cardAdd,
   cardTemplate,
-  elementsContainer,
+  containerSelector,
   cityNameInput,
   pictureLinkInput,
   validationElements
@@ -42,16 +42,16 @@ const renderCards = new Section(
     renderer: (cardData) => {
       createCard(cardData);
     }
-  }, elementsContainer
+  }, containerSelector
 );
 
 renderCards.renderItems();
 
 //Добавляем новую карточку
-const addCardPopup = new PopupWithForm(cardAdd, () => {
+const addCardPopup = new PopupWithForm(cardAdd, (formData) => {
   createCard({
-    name: cityNameInput.value,
-    link: pictureLinkInput.value
+    name: formData.title,
+    link: formData.picture
   });
 });
 
@@ -67,7 +67,10 @@ const user = new UserInfo({ profileName, profileJob });
 
 //Сохраняем новые данные профайла
 const userProfilePopup = new PopupWithForm(editProfile, function submitForm(formData) {
-  user.setUserInfo({ name: formData.name, job: formData.job })
+  user.setUserInfo({
+    name: formData.name,
+    job: formData.job
+  })
 });
 
 //Открываем popup - редактор профайла с заранее известными "имя" и "профессия"
