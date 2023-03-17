@@ -37,14 +37,14 @@
 .popup__image{margin:0;max-height:75vh;max-width:75vw;padding:0}
 .popup__image-conteiner{align-content:center;align-self:center;margin:0;padding:0;position:relative}
 .popup__image-caption{color:#fff;font-size:12px;font-weight:400;line-height:15px;margin-top:10px}
-.form{margin:47px auto 0;position:relative;width:calc(100% - 72px)}@media screen and (max-width:500px){.form{margin-top:75px;width:calc(100% - 44px)}}
+.form{align-items:center;display:flex;flex-direction:column;justify-content:space-between;margin:47px auto 0;width:calc(100% - 72px)}@media screen and (max-width:500px){.form{margin-top:75px;width:calc(100% - 44px)}}
 .form_type_delete-card{margin-top:15px}
-.form__set{border:none;margin:0;padding:0}
-.form__item{position:relative}
+.form__set{border:none;margin:0;padding:0;width:100%}
+.form__item{display:flex;flex-direction:column;min-height:65px}
 .form__input{border:0;border-bottom:1px solid rgba(0,0,0,.2);box-sizing:border-box;color:#000;font-size:14px;font-weight:400;line-height:17px;margin-bottom:30px;outline:none;padding:0 0 9px;width:100%}@media screen and (max-width:500px){.form__input{padding-bottom:8px}}
 .form__input_type_error{border-bottom:1px solid red;margin-bottom:5px}
-.form__input-error{color:red;font-size:12px;font-style:normal;font-weight:400;line-height:1.25;opacity:0;transition:.3s}
-.form__input-error_visible{opacity:1;vertical-align:9px}
-.form__submit{background:#000;border:none;border-radius:2px;color:#fff;cursor:pointer;font-size:18px;font-weight:400;line-height:22px;margin-bottom:37px;margin-top:18px;min-height:50px;padding:0;text-align:center;transition:opacity .2s;width:100%}.form__submit:hover{opacity:.8}@media screen and (max-width:571px){.form__submit{font-size:14px;line-height:17px;margin-bottom:25px;margin-top:45px;min-height:46px}}
+.form__input-error{color:red;font-size:12px;font-style:normal;font-weight:400;line-height:1.25;opacity:0;transition:.3s;white-space:break-spaces}
+.form__input-error_visible{display:block;opacity:1}
+.form__submit{background:#000;border:none;border-radius:2px;color:#fff;cursor:pointer;font-size:18px;font-weight:400;line-height:22px;margin-bottom:37px;margin-top:3px;min-height:50px;padding:0;text-align:center;transition:opacity .2s;width:100%}.form__submit:hover{opacity:.8}@media screen and (max-width:571px){.form__submit{font-size:14px;line-height:17px;margin-bottom:25px;margin-top:45px;min-height:46px}}
 .form__submit_disabled{background:none;border:1px solid #c4c4c4;border-radius:2px;color:#c4c4c4;cursor:default}.form__submit_disabled:hover{opacity:1}
 
