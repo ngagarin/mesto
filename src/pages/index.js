@@ -7,19 +7,22 @@ import {
 } from '../utils/authorizationData.js'
 import {
   popupEditAvatarButton,
-  popupEditProfileButtonOpen,
-  popupEditProfile,
   popupEditAvatar,
   editAvatar,
-  editProfile,
   profileAvatar,
+  editAvatarForm,
+  popupEditProfileButtonOpen,
+  popupEditProfile,
+  editProfile,
   profileName,
   profileAbout,
+  editProfileForm,
   popupCardsButtonOpen,
   popupAddCard,
   cardAdd,
   cardTemplate,
   containerSelector,
+  editCardForm,
   validationElements
 } from '../utils/constants.js';
 import Api from '../components/Api.js';
@@ -85,6 +88,7 @@ const popupChangeAvatar = new PopupWithForm(editAvatar, (formData) => {
   api.updateProfileAvatar({ avatar: formData.avatar }).then((data) => {
     user.setUserAvatar({ newUserAvatar: data.avatar });
     popupChangeAvatar.close();
+    editAvatarForm.reset();
   }).catch((err) => {
     console.log(err);
   }).finally(() => {
@@ -106,6 +110,7 @@ const userProfilePopup = new PopupWithForm(editProfile, function submitForm(form
   api.updateUserInfo(formData).then((data) => {
     user.setUserInfo(data);
     userProfilePopup.close();
+    editProfileForm.reset();
   }).catch((err) => {
     console.log(err);
   }).finally(() => {
@@ -169,6 +174,7 @@ const addCardPopup = new PopupWithForm(cardAdd, (formData) => {
   api.addNewCard({ name: formData.title, link: formData.picture }).then((formData) => {
     cardsList.addItem(formData);
     addCardPopup.close();
+    editCardForm.reset();
   }).catch((err) => {
     console.log(err);
   }).finally(() => {
