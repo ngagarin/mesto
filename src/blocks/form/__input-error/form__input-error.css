@@ -3,7 +3,8 @@
   font-weight: normal;
   font-size: 12px;
   line-height: 1.25;
-  color: #FF0000;
+  color: rgba(255, 0, 0, 1);
   opacity: 0;
   transition: 0.3s;
+  white-space: break-spaces;
 }

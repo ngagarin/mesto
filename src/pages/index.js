@@ -47,7 +47,7 @@ const api = new Api({
 api.getDataFromServer().then((info) => {
   const [initialCards, userData] = info;
   user.setUserInfo({ name: userData.name, about: userData.about, avatar: userData.avatar, id: userData._id });
-  renderCards.renderItems(initialCards);
+  cardsList.renderItems(initialCards);
 }).catch((err) => {
   console.log(err);
 });
@@ -90,7 +90,6 @@ const popupChangeAvatar = new PopupWithForm(editAvatar, (formData) => {
   }).finally(() => {
     popupChangeAvatar.renderLoading(false);
   });
-  popupChangeAvatar.renderLoading(true);
 });
 
 //Открываем popup - редактор профайла с заранее известными "имя" и "профессия"
@@ -104,22 +103,21 @@ popupEditProfileButtonOpen.addEventListener('click', () => {
 //Сохраняем новые данные профайла
 const userProfilePopup = new PopupWithForm(editProfile, function submitForm(formData) {
   userProfilePopup.renderLoading(true);
-  api.updateUserInfo({ name: formData.name, about: formData.about }).then((data) => {
-    user.changeUserInfo({ name: data.name, about: data.about });
+  api.updateUserInfo(formData).then((data) => {
+    user.setUserInfo(data);
     userProfilePopup.close();
   }).catch((err) => {
     console.log(err);
   }).finally(() => {
     userProfilePopup.renderLoading(false);
   });
-  userProfilePopup.renderLoading(true);
 });
 
 
 /** ---------- Карточки ----------**/
 
 //Достаем первые карточки
-const renderCards = new Section(
+const cardsList = new Section(
   containerSelector,
   {
     renderer: (cardData) => {
@@ -169,14 +167,13 @@ const renderCards = new Section(
 const addCardPopup = new PopupWithForm(cardAdd, (formData) => {
   addCardPopup.renderLoading(true);
   api.addNewCard({ name: formData.title, link: formData.picture }).then((formData) => {
-    renderCards.addItem(formData);
+    cardsList.addItem(formData);
     addCardPopup.close();
   }).catch((err) => {
     console.log(err);
   }).finally(() => {
     addCardPopup.renderLoading(false);
   });
-  addCardPopup.renderLoading(true);
 });
 
 // Открываем popup - добавления новой карточки

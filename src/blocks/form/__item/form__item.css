@@ -1,3 +1,5 @@
 .form__item {
-  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-height: 65px;
 }

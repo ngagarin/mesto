@@ -13,26 +13,24 @@ export default class UserInfo {
     return userData;
   }
 
-  setUserInfo({ name, about }) {
-    this._user.textContent = name;
-    this._userAbout.textContent = about;
-  }
-
-   setUserInfo(userData) {
+  setUserInfo(userData) {
     const {name, about, avatar, id} = userData;
-    this._user.textContent = name;
-    this._userAbout.textContent = about;
-    this._userAvatar.src = avatar;
-    this._userId = id;
-  }
-
-  changeUserInfo({name, about}) {
-    this._user.textContent = name;
-    this._userAbout.textContent = about;
+    if (userData) {
+      this._user.textContent = name;
+      this._userAbout.textContent = about;
+      this._userAvatar.src = avatar;
+      this._userId = id;
+    } else {
+      console.log('Ошибка, пофайл не обновлён');
+    }
   }
 
   setUserAvatar({newUserAvatar}) {
-    this._userAvatar.src = newUserAvatar;
+    if (newUserAvatar) {
+      this._userAvatar.src = newUserAvatar;
+    } else {
+      console.log('Ошибка, аватар не установлен');
+    }
   }
 
   getUserId() {
