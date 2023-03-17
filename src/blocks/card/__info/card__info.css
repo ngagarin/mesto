@@ -2,6 +2,5 @@
   margin: 0;
   display: flex;
   gap: 18px;
-  align-items: baseline;
   justify-content: space-between;
 }

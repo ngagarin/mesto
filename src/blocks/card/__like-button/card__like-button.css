@@ -5,6 +5,7 @@
   background-size: contain;
   box-sizing: border-box;
   padding: 0;
+  margin-top: 18px;
   margin-right: 20px;
   /*30px for maker*/
   background-color: transparent;
@@ -13,7 +14,6 @@
   background-position: center;
   background-repeat: no-repeat;
   transition: opacity .2s;
-  flex-shrink: 0;
 }
 
 .card__like-button:hover {

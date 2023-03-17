@@ -1,11 +1,15 @@
+// Для работы с аватаром
+export const popupEditAvatarButton = document.querySelector('.profile__avatar-edit-button');
+export const popupEditAvatar = document.querySelector('.popup_type_edit-avatar');
+export const editAvatar = '.popup_type_edit-avatar';
+export const profileAvatar = '.profile__avatar';
+
 // Для работы с профайлом
 export const popupEditProfileButtonOpen = document.querySelector('.profile__button_type_edit');
 export const popupEditProfile = document.querySelector('.popup_type_edit-profile');
 export const editProfile = '.popup_type_edit-profile';
 export const profileName = '.profile__name';
-export const profileJob = '.profile__job';
-export const nameInput = document.querySelector('.form__input_type_name');
-export const jobInput = document.querySelector('.form__input_type_job');
+export const profileAbout = '.profile__about';
 
 // Для работы с карточками
 export const popupCardsButtonOpen = document.querySelector('.profile__button_type_add');
@@ -13,8 +17,6 @@ export const popupAddCard = document.querySelector('.popup_type_add-card');
 export const cardAdd = '.popup_type_add-card';
 export const cardTemplate = '#card';
 export const containerSelector = '.cards__element';
-export const cityNameInput = document.querySelector('.form__input_type_title');
-export const pictureLinkInput = document.querySelector('.form__input_type_picture');
 
 // Валидация форм
 export const validationElements = {

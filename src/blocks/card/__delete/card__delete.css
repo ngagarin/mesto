@@ -15,8 +15,8 @@
   transition: opacity .2s;
   flex-shrink: 0;
   position: absolute;
-  top: 20px;
-  right: 20px;
+  top: 18px;
+  right: 15px;
 }
 
 .card__delete:hover {
